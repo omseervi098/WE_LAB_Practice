@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function search(){
+            var s=document.myform.string.value;
+            var s1=document.myform.str.value;
+            var st=0;
+            var count=0;
+            for(i=0;i<=s.length;i++){
+                if(s[i]==" "||i==s.length){
+                    var end=i-1;
+                    var temp="";
+                    for(j=st;j<=end;j++){
+                        temp+=s[j];
+                    }
+                    console.log(temp);
+                    if(temp===s1){
+                    count+=1;
+                    //console.log(count)
+                    }
+                    st=i+1;
+                }
+            }
+
+            console.log(count);
+            document.myform.cnt.value=count;
+            //document.myform.cnt.value=temp;
+            //document.myform.cnt.value="";
+        }
+        function replacestr(){
+            var s=document.myform.string.value;
+            var s1=document.myform.str.value;
+            var st=0;
+            var newstr="";
+            var repl=document.myform.replace.value;
+            for(i=0;i<=s.length;i++){
+                if(s[i]==" "||i==s.length){
+                    var end=i-1;
+                    var temp="";
+                    for(j=st;j<=end;j++){
+                        temp+=s[j];
+                    }newstr+=" ";
+                    console.log(temp);
+                    if(temp==s1){
+                        for(j=0;j<repl.length;j++){
+                            newstr+=repl[j];
+                        }newstr+=" ";
+                    }else{
+                        for(j=st;j<=end;j++){
+                            newstr+=s[j];
+                        }newstr+=" ";
+                    }
+                    st=i+1;
+                }
+            }
+            document.myform.newstring.value=newstr
+        }
+        function reset(){
+            document.myform.string.value="";
+            document.myform.str.value="";
+            document.myform.cnt.value="";
+            document.myform.repl.value="";
+            document.myform.newstring.value="";
+        }
+    
+    </script>
+</head>
+<body>
+    <form name="myform">
+        <label for="string">Input string:</label><br>
+        <input type="text" id="string" name="string" value=""><br>
+        <label for="str">Enter string to search :</label><br>
+        <input type="text" id="str" name="str" value=""><br>
+        <label for="cnt">No of OCcurence:</label><br>
+        <input type="text" id="cnt" name="cnt" value=""><br>
+        <label for="replace">Replace string with:</label><br>
+        <input type="text" id="replace" name="replace" value=""><br>
+        <label for="newstring">New String:</label><br>
+        <input type="txt" id="newstring" name="newstring" value=""><br>
+        <br>
+        <input type="button" value="Search" onclick="return(search());">
+        <input type="button" value="Replace" onclick="return(replacestr());">
+        <input type="button" value="reset" onclick="return(reset());">
+    </form>
+</body>
+</html>

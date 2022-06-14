@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function validate() {
+            var emailid = document.myform.email.value;
+            if (document.myform.fname.value == "") {
+                alert("Provide your first name");
+                document.myform.fname.focus();
+                return false;
+            }
+            if (document.myform.fname.value == "") {
+                alert("Provide your first name");
+                document.myform.fname.focus();
+                return false;
+            }
+            if (document.myform.lname.value == "") {
+                alert("Provide your last name");
+                document.myform.lname.focus();
+                return false;
+            }
+            if (emailid != "") {
+                atpos = emailid.indexOf("@");
+                dotpos =emailid.lastIndexOf(".");
+                if (atpos < 1 || (dotpos - atpos) < 2) {
+                    alert("Please enter correct email ID")
+                    document.myform.email.focus();
+                    return false;
+                }
+            }
+
+            if (emailid == "") {
+                alert("Provide your email");
+                document.myform.email.focus();
+                return false;
+            }var password=document.myform.password.value;
+            var cppassword=document.myform.cppassword.value;
+            if (password== "") {
+                alert("Provide your password");
+                document.myform.password.focus();
+                return false;
+            }
+            if(password.length<6){
+                alert("Enter password of 6 characters");
+                return false;
+            }
+            if (cppassword == "") {
+                alert("Confirm your password");
+                document.myform.password.focus();
+                return false;
+            }
+            if(cppassword.length<6){
+                alert("Enter password of 6 characters");
+                return false;
+            }
+            if(cppassword!=password){
+                alert("Password Not matching");
+                document.myform.cppassword.focus();
+                document.myform.password.focus();
+                return false;
+            }
+            return (true);
+        }
+
+    </script>
+</head>
+
+<body>
+    <form action="" name="myform" onsubmit="return(validate());">
+        <label for="fname">First name:</label><br>
+        <input type="text" id="fname" name="fname" value=""><br>
+        <label for="lname">Last name:</label><br>
+        <input type="text" id="lname" name="lname" value=""><br>
+        <label for="email">E-mail:</label><br>
+        <input type="text" id="email" name="email" value="" onclick="return (validateemail());"><br>
+        <label for="password">Password:</label><br>
+        <input type="password" id="password" name="password" value=""><br>
+        <label for="cppassword">Confirm Password:</label><br>
+        <input type="password" id="cppassword" name="cppassword" value=""><br>
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+</body>
+
+</html>

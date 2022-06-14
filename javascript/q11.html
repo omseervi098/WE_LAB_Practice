@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function evenno(){
+            var k=document.myForm.list.value;
+            console.log(k[0])
+            var frst=k[0];
+            if(frst>='A' && frst<='Z'){
+
+                document.myForm.evennos.value="Correct"
+            }else{
+                document.myForm.evennos.value="INCorrect"
+            }
+        }
+    </script>
+</head>
+<body>
+    <form name="myForm">
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <select id="mySelect">
+            <option>Apple</option>
+            <option>Pear</option>
+            <option>Banana</option>
+            <option>Orange</option>
+        </select>
+    </form>
+    <h1 >hello<span id="h-1">0</span></h1>
+    <script>
+        document.getElementById("h-1").innerHTML=document.getElementById("mySelect").length;
+    </script>
+</body>
+</html>
+    </form>
+</body>
+</html>
