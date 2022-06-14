@@ -1,0 +1,32 @@
+.App {
+  margin-top:50px;
+  background-color: beige;
+  padding: 50px;
+}
+body{
+  text-align: center;
+  background-color: aqua;
+}
+#fname,#lname{
+  width: 200px;
+  height: 30px;
+  border-radius: 5px;
+  border: 0;
+  font-size:1.1rem;
+}
+#submit{
+  width: 150px;
+  height: 40px;
+  background-color: aquamarine;
+  border: 2px solid white;
+  color:rgb(4, 4, 4);
+  font-size: 1.3rem;
+  border-radius: 20px;
+}
+#submit:hover{
+  background-color: rgb(106, 106, 225);
+  color:white;
+  border:2px solid white;
+}
+
+
